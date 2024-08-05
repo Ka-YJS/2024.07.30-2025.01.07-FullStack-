@@ -40,7 +40,18 @@ public class Ex08_multi_array {
 						{16,17,18,19,20}};
 		
 		
-		
+		int sum = 0;
+
+        
+	        for (int i = 0; i < iArr.length; i++) {
+	
+	            for (int j = 0; j < iArr[i].length; j++) {
+	
+	                sum += iArr[i][j];
+	
+	            }
+	
+	        }System.out.println("배열 합: " + sum);
 		
 		
 		
