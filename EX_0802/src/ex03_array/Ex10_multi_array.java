@@ -49,7 +49,7 @@ public class Ex10_multi_array {
 				break;//정답맞추면 그 이후로 비교할 필요x -> break
 			}
 		}
-		
+		//isWin -> true면 당첨, false면 당첨아님
 		if(isWin) {
 			System.out.println(myNum+"번호 당첨");
 		} else {
