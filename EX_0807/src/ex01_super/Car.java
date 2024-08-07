@@ -29,7 +29,7 @@ public class Car {
 	}
 
 	//생성자 : 접근제한자 클래스명(매개변수){}
-	public void Car(int gasGauge) {
+	public Car(int gasGauge) {
 		
 		this.gasGauge = gasGauge;
 	}
