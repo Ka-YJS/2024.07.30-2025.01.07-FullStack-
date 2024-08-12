@@ -47,7 +47,16 @@ public class Ex02_Calendar {
 }
 
 
-	/*
-	*replace : 특정문자를 치환해주는 메서드
+	/*추가설명
+	1. 특정문자열을 치환해주는 메서드_replace : 특정문자를 치환해주는 메서드
 	-형식 : replace(기존문자열, 바꿀문자열)
+ 	-ex.System.out.println("Mal","Gae");
+  
+  	2. 특정문자를 포함하고있는지 판별_contains
+   	-형식 : contains(String str)
+    	-ex.System.out.println(str.contains("a"));
+     
+       	3. 문자열의 길이가 0인 경우 true를 반환_isEmpty
+   	-형식 : isEmpty()
+    	-ex.System.out.println(str.isEmpty);
 	*/
