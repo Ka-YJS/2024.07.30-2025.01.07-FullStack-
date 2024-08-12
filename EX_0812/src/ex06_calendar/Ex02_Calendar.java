@@ -45,3 +45,9 @@ public class Ex02_Calendar {
 
 	}
 }
+
+
+	/*
+	*replace : 특정문자를 치환해주는 메서드
+	-형식 : replace(기존문자열, 바꿀문자열)
+	*/
