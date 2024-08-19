@@ -36,11 +36,11 @@ qt.startGame();
 
 public class QuizThread extends Thread {
 	
-	int a, b;
-	int timer = 0;
-	int playCount = 0;
-	boolean isCheck = true;
-	final int FINISH = 5;//출제 문제 갯수
+	int a, b;//난수를 입력받기 위한 변수
+	int timer = 0;//시간을 세서 담기위한 변수
+	int playCount = 0;//정답을 맞춘 횟수를 저장하기 위한 변수
+	boolean isCheck = true;//반복문을 멈추기 위한 변수
+	final int FINISH = 5;//맞춰야하는 문제의 갯수
 	
 	Scanner sc = new Scanner(System.in);
 	
@@ -50,20 +50,20 @@ public class QuizThread extends Thread {
 			try {
 				a = new Random().nextInt(100)+1;
 				b = new Random().nextInt(100)+1;
-				System.out.println(a+"+"+b+"=");
-				int result = sc.nextInt();
+				System.out.println(a+"+"+b+"=");//두개의 난수를 더하는 문제를 콘솔에 출력
+				int result = sc.nextInt();//정답입력받기
+				//정답을 입력할 때 정수 이외의 것을 입력하면 예외 발생
 				
 				if(result==(a+b)) {
 					System.out.println("정답");
 				}else {
 					System.out.println("오답");
-					continue;
-				}playCount++;
+					continue;//오답일 경우 다시 위로 올라가서 문제맞추기
+				}playCount++;//정답을 맞추면 카운트하기
 				
-				if(playCount == FINISH) {
+				if(playCount == FINISH) {//5개를 맞추면 멈추기
 					System.out.println("결과(소요시간) : "+timer+"초");
-					
-					isCheck = false;
+					isCheck = false;//isCheck를 false로 바꿔 반복문을 빠져나감
 				}
 				
 			} catch (Exception e) {
@@ -71,13 +71,14 @@ public class QuizThread extends Thread {
 				
 			}//try-catch
 		}//while
-	}
+	}//satrtGame
 
+	/*시간초를 세기위한 스레드, startGame( )메서드가 실행되는 동안 별도로 작동하는 스레드*/
 	@Override
-	public void run() {
+	public void run() {//isCheck가 false가 되는 순간 반복문이 같이 멈춤
 		while(isCheck) {
-			try {
-				Thread.sleep(1000);
+			try {//sleep을 주기위해 필요함
+				Thread.sleep(1000);//1초씩 세야하기때문에 sleep사용
 				timer++;
 			}catch(Exception e){
 				
