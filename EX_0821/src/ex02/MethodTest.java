@@ -17,5 +17,27 @@ public class MethodTest {
         }
         
         System.out.println("최대값: " + max_result);
+
+        	public void fToc() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("화씨온도를 입력하세요 : ");
+		double faher = sc.nextDouble();
+		
+		double cel =  (faher-32)/1.8;
+		
+		System.out.println("섭씨로 변화된 온도는 : " + cel+"입니다.");
+	}
+	
+	public void cTof() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("섭씨온도를 입력하세요 : ");
+		
+		double cel = sc.nextDouble();
+		double faher = 1.8 * cel + 32;
+		
+		System.out.println("화씨로 변화된 온도는 : " + faher +"입니다.");
+	}
         
     }}
