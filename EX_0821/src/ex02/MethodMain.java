@@ -26,17 +26,11 @@ public class MethodMain {
 
 		int num = sc.nextInt();
 
-		if(num==1) {//화->섭
-			
-		}else if(num==2) {//섭 -> 화
-			
-		}else {
-			System.out.println("잘못된 입력");
-		}}//main
-	
-	public class Temperature {//섭씨랑 화씨 계산하는 fToc랑 cTof입력해야할듯
-		
-	}
+		if(n == 1) {
+			mt.fToc();
+		} else {
+			mt.cTof();
+		}
 	
 
 
