@@ -6,25 +6,103 @@
     <title>instargram</title>
 </head>
 <body>
+    <style>
+        h2{
+            color:red;
+        }
+
+        .highlight{
+            border: solid;
+            border-color:white;
+        }
+
+        #profile{
+            border: solid;
+            border-color: blue;
+        }
+
+
+    </style>
+    <img src="image/instargramlogo.png" width="150px"><br/>
+    <input type="search" value="검색">
     <!-- <br/> 태그 : 줄바꿈 기능이 있음 -->
     <!-- <p> 태그 : paragraph의 약자로 문단을 나눔 
         ->p태그는 줄바꿈을 표현하는 block이라는 속성이 있기때문에
         옆에 글이 올 수 없음-->
+    <div id="profile">
+            <img src="image/profile.jpg" width="50px">
+            
     
-    <h2>half_bottle</h2>
-    <p>프로필 편집<br/>
-    <p><!--<strong> : 볼드체를 표현함-->>
-        <strong>
-            반병현(Byunghyun Ban)<br/>
-        저자<br/>
-    </p>
-    <p></p>needleworm.github io<br/>
+            <h2>half_bottle</h2>
+            <button>프로필 편집</button>
+    </div>
+    <div>
+        <p><!--<strong> : 볼드체를 표현함-->>
+            <strong>
+                반병현(Byunghyun Ban)<br/>
+            저자<br/>
+        </p><a href="https://needleworm.github.io">
+        <p>needleworm.github.io</a></p>
+    </div>
+    <!--높이 35px로, 하이라이드 이미지 두개 넣기-->>
+    <div class="highlight">
+        <div>
+            <div>
+                <img src="image/hl 1.jpg" width="35px">
+            </div>
+            <div>
+                😘
+            </div>
+        </div>
+    </div> 
+    
+    <div class="highlight">
+        <div>
+            <div>    
+                <img src="image/hl 2.jpg" width="35px">
+            </div>
+            <div>
+                😍
+            </div>
+        </div>
+    </div>     
+
+    <div>
+        <p>
+        <div>
             게시물<br/>
-            팔로워<br/>
-            팔로우<br/>
             133<br/>
+        </div>
+
+        <div>
+            팔로워<br/>
             408<br/>
+        </div>
+
+        <div>
+            팔로우<br/>
             189<br/>
-            <p>    
+        </div>
+
+    <div>아이콘이 들어갈 자리</div>
+    <div>
+        <img src="image/thumbnails/thumbnails 1.jpg" width="32%">
+        <img src="image/thumbnails/thumbnails 2.jpg" width="32%">
+        <img src="image/thumbnails/thumbnails 3.jpg" width="32%">
+        <img src="image/thumbnails/thumbnails 4.jpg" width="32%">
+        <img src="image/thumbnails/thumbnails 5.jpg" width="32%">
+        <img src="image/thumbnails/thumbnails 6.jpg" width="32%">
+        <img src="image/thumbnails/thumbnails 7.jpg" width="32%">
+        <img src="image/thumbnails/thumbnails 8.jpg" width="32%">
+        <img src="image/thumbnails/thumbnails 9.jpg" width="32%">
+    </div>
+
+    <!--미리보기를 크게봐도 한줄에 이미지가 3개에서 늘어나는 것이 아닌
+    그림 사이즈가 유동적으로 변화함 -> 크기가 아닌 %를 주었기때문-->>
+
+    <div>게시물 썸네일이 들어 갈 자리</div>
+                
+
+
 </body>
 </html>
