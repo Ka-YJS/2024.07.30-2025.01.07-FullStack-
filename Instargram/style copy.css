@@ -55,4 +55,6 @@ i{ font-size: 40px; color: purple;}/*: i 전체에 들어가는 글자색은 보
             text-align: center; font-size: 15px; height: 30px;}
 .selected{border-bottom: solid gray 3px;}
 
+body{font-size: 3vw;}
+
 
