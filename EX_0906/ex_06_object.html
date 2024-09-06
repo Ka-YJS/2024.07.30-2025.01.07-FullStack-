@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //자바스트립트 객체의 특징
+        let person = {name : '홍길동', age : 30};
+    //객체에 들어있는 내용을 출력하는 방법
+    document.write('person.name',person.name,'<br>' );  
+    document.write('person.name',person.age,'<br>' );
+    document.write('<hr>');
+      
+    document.write('person[name]',person['name'],'<br>' );  
+    document.write('person[age]',person['age'],'<br>' );
+    document.write('<hr>');
+    
+    //프로퍼티 추가하기_없는 프로버티를 사용하려고하면 추가가 됨
+    person.bt = 'AB';
+    document.write('person.bt',person.bt,'<br>');
+    document.write('person[bt]',person['bt'],'<br>');
+    document.write('<hr>');
+
+    //객체에서 프로퍼티 삭제하기
+    delete person.bt;
+    document.write("peron[bt] : ",person['bt'],'<br>');//출력값 : peron[bt] : undefined 
+    document.write('<hr>');
+
+    //프로퍼티가 객체에 속해있는지 확인하는 법 -> in연산자를 사용
+    document.write('name in person : ','name' in person,'<br>');//출력값 : true
+    document.write('address in person : ','address' in person,'<br>');//출력값 : false
+    document.write(person,'<br>');//출력값 : [object Object]
+    document.write('<hr>');
+
+    //for-in문
+    for(i in person){
+        document.write(`${i} = ${person[i]}<br>`);
+    }//출력값 : name = 홍길동 age = 30
+    document.write('<hr>');
+
+    //새로운 객체에 기존 객체를 참조시키기
+    let person2 = person;
+    person.age = 40;
+    document.write('person2.age : ',person2['age'],'<br>');
+    document.write('<hr>');
+
+    //객체 안에 객체가 들어갈 수 있음
+        let circle = {
+			  center : {x : 1.0, y: 2.0}, radius : 2.5//radius=반지름
+            }
+			document.write("<hr>");
+			
+			document.write('circle.center.x : ',circle.center.x,
+                            ' circle.center.y : ',circle.center.y+"<br>");
+			document.write('circle.radius : ',circle.radius+"<br>");
+			document.write("<hr>");
+
+    //객체 안에 함수가 들어갈 수 있음 -> 객체 안에 들어있는 함수를 메서드라고 함
+    let person3 = {
+				name : "홍길동",
+				age : 30,
+				getInfo : function(){
+					document.write(`이름 : ${this.name}<br>나이 : ${this.age}<br>`);
+				}
+			};person3.getInfo();//: 함수의 호출
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //eval()
+        let x = 10, y = 20;
+        let result = eval("x+y"); //30
+        document.write(`${result} <br>`); 
+        document.write('<hr>');      
+
+    //isFinite()
+        document.write(`${isFinite(123)}<br>`);//출력값 : true 
+        document.write(`${isFinite(123e100)}<br>`);//출력값 : true   
+        document.write(`${isFinite(0)}<br>`);//출력값 : true
+        document.write(`${isFinite(true)}<br>`);//출력값 : true  
+        document.write(`${isFinite(false)}<br>`);//출력값 : true  
+        document.write(`${isFinite(null)}<br>`);//출력값 : true  
+        document.write(`${isFinite("문자열")}<br>`);//출력값 : false
+        document.write(`${isFinite(undefined)}<br>`);//출력값 : false
+        document.write(`${isFinite(NaN)}<br>`);//출력값 : false 
+                                              //-> NaN과 "문자열"은 같다고 볼 수 있음
+        document.write('<hr>');                                       
+
+    //isNaN()
+        document.write(`${isNaN(123)}<br>`);//출력값 : false 
+        document.write(`${isNaN(123e100)}<br>`);//출력값 : false   
+        document.write(`${isNaN(0)}<br>`);//출력값 : false
+        document.write(`${isNaN(true)}<br>`);//출력값 : false  
+        document.write(`${isNaN(false)}<br>`);//출력값 : false  
+        document.write(`${isNaN(null)}<br>`);//출력값 : false  
+        document.write(`${isNaN("문자열")}<br>`);//출력값 : true
+        document.write(`${isNaN(undefined)}<br>`);//출력값 : true
+        document.write(`${isNaN(NaN)}<br>`);//출력값 : true
+        document.write('<hr>');
+        
+    //parseFloat(), parseInt()
+        document.write(`${parseFloat("123")}<br>`);
+        document.write(`${parseFloat("123.000")}<br>`);
+        document.write(`${parseFloat("123.456")}<br>`);
+        document.write(`${parseFloat("12 34 56")}<br>`);//출력값 : 12
+        document.write(`${parseFloat("   123   ")}<br>`);//출력값 : 123 -> 여백출력x
+        document.write(`${parseFloat("123 초콜릿")}<br>`);//출력값 : 123
+        document.write(`${parseFloat("초콜릿 123")}<br>`);//출력값 : NaN
+
+        document.write('<hr>');
+
+        document.write(`${parseInt("123")}<br>`);
+        document.write(`${parseInt("123.000")}<br>`);
+        document.write(`${parseInt("123.456")}<br>`);//3개 모두 출력 값 : 123
+        document.write(`${parseInt("12 34 56")}<br>`);//출력값 : 12
+        document.write(`${parseInt("   123   ")}<br>`);//출력값 : 123 -> 여백출력x
+        document.write(`${parseInt("123 초콜릿")}<br>`);//출력값 : 123
+        document.write(`${parseInt("초콜릿 123")}<br>`);//출력값 : NaN
+        
+        document.write(`${parseInt("10",10)}<br>`);//출력값 : 10
+        document.write(`${parseInt("10",8)}<br>`);//출력값 : 8
+        document.write(`${parseInt("10",16)}<br>`);//출력값 : 16
+        /*->parseInt()함수는 해당 문자열을 각 진수로 인식*/
+        document.write('<hr>');
+        document.write(`${parseInt("0x10")}<br>`);
+        /*->전달받은 문자열의 시작이 "0x"로 시작하면, parseInt()함수는 해당 문자열을 16진수로 인식*/
+        document.write('<hr>');
+
+        //encodeURI(),encodeURIComponent()
+        let uri = "http://google.com/search.php?name=홍길동&city=서울";
+        let enc1 = encodeURI(uri);
+        let enc2 = encodeURIComponent(uri);
+        document.write(`${enc1} <br> ${enc2}<br>`);
+        document.write('<hr>');
+
+        
+
+    </script>
+</body>
+</html>

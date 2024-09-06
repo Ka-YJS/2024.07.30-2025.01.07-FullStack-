@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function square(x) { //매개변수를 적을 때 ;let x 가 아닌 x만 써도 가능 -> 생략가능    
+        var result = x * x; 
+        
+        return result; 
+    }
+    let result = square(3);
+    document.write(`<p>squre( )의 결과 : ${result}<br>`);
+
+    document.write('<hr>');
+    
+    document.write(`<p>add(10,7) : ${add(10,7)}<br>`);
+    function add(x,y){
+        let z = x+y;
+        return z;
+    }
+
+
+
+    </script>
+</body>
+</html>
