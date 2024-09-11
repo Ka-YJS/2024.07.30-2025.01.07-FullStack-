@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>   
+    <form name="ff">
+        <table border="1">
+            <tr>
+                <th>ID : </th>
+				<td>
+                <input name="m_id" aria-placeholder="아이디입력 : ">
+                </td>
+            </tr>
+            <tr>
+                <th>AGE : </th>
+				<td>
+                   <input name="m_age" aria-placeholder="나이입력 : ">
+                </td>
+            </tr>
+            <tr>
+                <th>PWD : </th>
+				<td><input type="password" name="m_pwd"></td>
+            </tr>
+            <tr>
+                    <td colspan="2" align="center">
+                    <input type="button" value="전송"></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+
+        function check(c){
+        //let f = document.forms[0];
+
+        //form태그에 준 이름을 가지고 검색할 수 있음
+        let f = document.ff;
+
+        //m_id라는 name속성 갖고있는 값 가져오기
+        let myId = f.m_id.value;
+
+        //유효성 검사하기
+        if(myId.length==0){
+            alert('아이디 입력 : ');
+            return;//:if문에서 return은 메서드를 빠져나가는 역할
+        }
+        let myAge = f.m_age.value;
+        if(myAge.length==''){
+            alert('나이 입력 : ');
+            return;
+        }
+        let myPwd = f.m_pwd.value;
+        if(myPwd ==''){
+            alert('비번 입력 : ');
+            return;
+        }
+        
+        //목적지 주는 방법
+        f.action = "login.html";
+
+        //전송방식
+        f.method='get';
+
+        /*입력된 데이터를 전송
+            ->f가 가진 name속성이 action으로 지정해둔 페이지의 파라미터로 전달*/
+        f.submit();
+
+        }
+
+        let button = document.querySelector("input[type='button']");
+        //input[type='button'] : 속성선택자
+        button.addEventListener("click",function(e){
+            check();
+        })
+
+    </script>
+</body>
+</html>
