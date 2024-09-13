@@ -23,9 +23,9 @@ function Sol1(){//1. 컴포넌트 만들기
             <input>
                 <button>추가</button>
             </input>
-            <ur>{eating.map((item,idx) =>(
+            <ul>{eating.map((item,idx) =>(
                     <li key={idx}>{item}</li>
-                ))}</ur> */}
+                ))}</ul> */}
             <input onChange={inputHandler} type="text"/>
             {/* <input onChange={inputHandler} value={value}/>
                 -> //한부분 추가하고싶으면 이렇게 써야함*/}
