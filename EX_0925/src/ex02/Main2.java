@@ -12,10 +12,20 @@ class AppContext{
 	Map map;//객체 저장소
 	
 		public AppContext(){
-			map = new HashMap();//컬렉션
-			map.put("car", new SportsCar());
-			map.put("engine", new Engine());
-		}
+				   try {
+		Properties p = new Properties();
+		p.load(new FileReader("config.txt"));
+		
+		//Properties에 저장된 내용을 Hashmap에 저장
+		map = new HashMap(p);
+		
+			//반복문을 통해서 클래스 이름을 얻고, 객체를 생성해서 다시 map에 저장
+			for(Object key : map.keySet()) {
+				Class clazz = Class.forName((String)map.get(key));
+				map.put(key, clazz.newInstance());//:이러면 매번 console적용을 해주지않아도됨
+			}	
+	} catch (Exception e) {
+	}
 		
 		Object getBean(String key) {
 			return map.get(key);//반환되는 내용 : new Sportscar
