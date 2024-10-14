@@ -7,21 +7,20 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/*UserDTO : 속성
--token
--idx
--id
--pwd
--name(진짜이름)
--email
-*/
+//속성
+//token
+//idx
+//id
+//pwd
+//name
+//email
 
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class UserDTO {
-	
+
 	private String token;
 	private int idx;
 	private String userId;
@@ -29,13 +28,12 @@ public class UserDTO {
 	private String name;
 	private String email;
 	
-	//entity -> dto
 	public UserDTO(UserEntity entity) {
 		this.idx = entity.getIdx();
-		this.userId= entity.getUserId();
+		this.userId = entity.getUserId();
 		this.pwd = entity.getPwd();
 		this.name = entity.getName();
-		this.email = entity.getEmail();
+		this.email = entity.getPwd();
 	}
 	
 	//dto -> entity
@@ -47,7 +45,8 @@ public class UserDTO {
 				.email(dto.getEmail())
 				.build();
 	}
-
+	
+	
 	
 	
 	
