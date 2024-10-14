@@ -54,7 +54,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
 				//인증된 사용자와 그 사용자의 권한 정보(Authorities)를 담는 역할을 한다.
 				AbstractAuthenticationToken authentication = 
 						new UsernamePasswordAuthenticationToken(
-								userId,//id -> 개인을 구별함
+								userId,//id
 								null,//password (굳이 저장안해도되서 null)
 								AuthorityUtils.NO_AUTHORITIES //현재 권한 정보는 제공하지 않는다.
 								);
@@ -92,9 +92,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
 	}//doFilterInternal
 	//HttpsServletRequest request
 	//클라이언트가 하는 요청은 request 객체에 담긴다.
-	private String parseBearerToken(HttpServletRequest request) {//우리가 보낸 요청을 객체형태로 가지고있음
+	private String parseBearerToken(HttpServletRequest request) {
 		//Http 요청의 헤더를 파싱해 Bearer 토큰을 반환한다.
-		String bearerToken = request.getHeader("Authorization");//Authorization부분만 잘라서 bearerToken에 넣음
+		String bearerToken = request.getHeader("Authorization");//Authorization부분만 잘라낸다  
 		
 		//Bearer 토큰 형식일 경우 토큰값만 반환
 		if(StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
