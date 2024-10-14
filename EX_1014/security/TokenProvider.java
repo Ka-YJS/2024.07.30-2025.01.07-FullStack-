@@ -3,16 +3,14 @@ package com.korea.user.security;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
-
 import org.springframework.stereotype.Service;
-
-import com.korea.user.model.UserEntity;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import lombok.extern.slf4j.Slf4j;
 
+import com.korea.user.model.UserEntity;
+import lombok.extern.slf4j.Slf4j;
 
 //이 TokenProvider 클래스의 역할은 유저의 정보를 받아서 토큰(JWT)을 생성하기
 @Service 
