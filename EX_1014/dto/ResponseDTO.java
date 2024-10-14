@@ -7,19 +7,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-/*ResponseDTO : 속성
--error
--List<T>data 
- */
-
+@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class ResponseDTO<T> {
-	
-	private String error;
-	private List<T>data;
-	private T value;
 
+	private String error;
+	private List<T> data;
+	private T value;
 }
+
