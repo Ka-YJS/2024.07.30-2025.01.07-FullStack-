@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*객체생성*/
+    
+    //1. 객체리터럴
+        let kitty = {
+            name: "나비",
+            family: "코리안 숏 헤어",
+            age: 1,
+            weight: 0.1
+        };
+
+        document.write(`우리집 새끼고양이 이름은 ${kitty.name}이고, 
+                        종은 ${kitty.family}입니다.<br>`);
+
+    //2-1. 생성자를 이용한 객체의 생성
+        let person = new Object();
+
+        //프로퍼티추가
+        person.name = 'hong';
+        person.gender = 'male';
+        person.sayHello = function(){
+            document.write('Hi! my name is ', this.name);
+        }
+
+        document.write(person.name,'<br>');
+        person.sayHello();
+        document.write('<hr>');
+
+    //2-2. 생성자 함수를 사용하는 법
+        function Person(name, gender) {
+            /*let married = true;//private*/
+            this.name = name;//public
+            this.gender = gender;//public
+            this.sayHello = function(){
+                document.write('Hi! my name is ', this.name,'<br>');//생성자함수
+            };//this.getMarried
+        }
+        let person4 = new Person('Lee', 'male');
+        let person5 = new Person('Kim', 'female');
+
+        console.log(person4);
+        console.log(person5);
+        //console에 대한 출력결과는 개발자도구(F12)에서 확인가능함
+        console.log(person4.sayHello());
+
+        /*console.log(person4.married);//이건 출력할 수 x -> undefined
+        console.log(person4.getMarried);//이건 출력할 수 x -> undefined */
+        
+
+
+
+
+
+
+    </script>
+</body>
+</html>

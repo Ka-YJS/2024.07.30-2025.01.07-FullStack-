@@ -1,0 +1,14 @@
+
+h2{
+    color:red;
+}
+
+.highlight{
+    border: solid;
+    border-color:white;
+}
+
+#profile{
+    border: solid;
+    border-color: blue;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function numbering(n){
+            for(let i=0;i<n;i++){console.log(i)}
+        }
+        function red(){
+         //1. document.querySelector("input");를 생성
+         //2. 변수생성
+            let button = document.querySelectorAll("input");
+            for(let i=0;i<button.length;i++){button[i].style.backgroundColor = "red";}
+            //[input,input,input] -> 전부 빨간색으로하려면 배열을 각각 꺼내서 적용해야함
+         //3. 버튼에 빨간색 주기 -> 배경색 이외에도 다양한 css스타일을 JS를 이용해서 제어할 수 있음
+         //   button.style.backgroundColor = "red";
+    
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="click" onclick="alert('안녕하세요')">
+        <!--onclick : 클릭했을 때를 의미하는 속성 -> 이때 수행되는 작업을 이벤트핸들러라고 함-->
+    <hr>
+    <p onclick="alert('안녕하세요')">눌러보세요!</p><!--눌러보세요를 눌렀을때 반응-->
+    <hr>
+    <!-- <input type="button" value="버튼" 
+        onclick="for(let i=0;i<6;i++){console.log(i)}"> -->
+    <hr>
+    <input type="button" value="버튼" 
+        onclick="numbering(5)">
+    <hr>     
+    <!--버튼을 클릭하면 버튼의 색을 빨간색으로 바꾸기-->
+    <input type="button" value="버튼" onclick="red()">
+</body>
+</html>
