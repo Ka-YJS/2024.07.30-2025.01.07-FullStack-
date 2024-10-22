@@ -14,3 +14,5 @@ spring: #스프링부트 설정을 위한 최상위 키워드
       github: #GitHub Oauth2제공자 관련 설정
         authorization-uri: https://github.com/login/oauth/authorize
 		#사용자를 GitHub 로그인 페이지로 리다이렉션하는 URI, GitHub OAuth2 인증의 시작점
+  	token-uri: https://github.com/login/oauth/access_token
+        user-info-uri: https://api.github.com/use
