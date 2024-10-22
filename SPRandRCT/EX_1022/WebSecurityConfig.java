@@ -15,6 +15,7 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import com.example.demo.security.JwtAuthenticationFilter;
+import com.example.demo.security.OAuthSuccessHandler;
 import com.example.demo.security.OAuthUserServiceImpl;
 
 @Configuration
@@ -26,6 +27,9 @@ public class WebSecurityConfig {
    
    @Autowired
    private OAuthUserServiceImpl oAuthUserService;
+   
+   @Autowired
+   private OAuthSuccessHandler oAuthSuccessHandler;
    
    @Bean
    protected DefaultSecurityFilterChain securityFilterChain(
@@ -51,7 +55,9 @@ public class WebSecurityConfig {
 	     //OAuth2 제공자로부터 사용자 정보를 가져올 때 사용하는 엔드포인트를 설정함
       	//이 부분은 OAuth2인증이 성공한 후, 사용자 프로필 데이터를 가져오는 역할을 함
 	    .userInfoEndpoint()//사용자 정보를 처리하는 서비스를 지정하는 메서드
-	    .userService(oAuthUserService);//oauth2 로그인설정
+	    .userService(oAuthUserService)//oauth2 로그인설정
+      	.and()
+      	.successHandler(oAuthSuccessHandler);//oauth2 인증이 성공한 뒤 실행될 동작을 정의하는 메서드
       
       http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
