@@ -20,7 +20,7 @@ let idx = 0;
 const Length = () => {
     const [text, setText] = useState(list[0]);
     // const [length, setLength] = useState('');
-
+    //text의 값이 바뀔 때만 함수가 실행됨
     const _onPress = () => {
         // setLength(getLength(text));
         ++idx;
